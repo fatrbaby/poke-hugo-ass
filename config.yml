@@ -1,0 +1,11 @@
+document:
+  draft: false
+dir:
+  html: /Users/fatrbaby/Charge/blog/public/posts
+  target: /Users/fatrbaby/Charge/blog/content/posts
+  #target: /Users/fatrbaby/Charge/blog/tmp
+pattern:
+  title: "h2>a"
+  date: "span.date"
+  content: "div.post_content"
+  tags: "meta[name=keywords]"

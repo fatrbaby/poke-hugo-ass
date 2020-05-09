@@ -1,0 +1,7 @@
+---
+title: "{{title}}"
+date: {{date}}
+draft: {{draft}}
+tags: {{tags}}
+---
+{{content}}
