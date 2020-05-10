@@ -5,7 +5,6 @@ import (
 	h2m "github.com/JohannesKaufmann/html-to-markdown"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/fatrbaby/poke-hugo-ass/config"
-	"log"
 	"strings"
 )
 
@@ -39,19 +38,8 @@ func convert(doc *goquery.Document) *MarkdownContent {
 	}
 
 	if len(config.Conf.Pattern.Content) > 0 {
-		sections := doc.Find(config.Conf.Pattern.Content)
-		html, err := goquery.OuterHtml(sections)
-
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		markdown, err := converter.ConvertString(html)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		md.Content = markdown
+		content := doc.Find(config.Conf.Pattern.Content)
+		md.Content = converter.Convert(content)
 	}
 
 	return md
